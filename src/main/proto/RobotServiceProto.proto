@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package com.ncirl.robotics;
+
+option java_multiple_files = true;
+option java_package = "com.ncirl.robotics.robot";
+option java_outer_classname = "RobotServiceProto";
+
+// The smart robot service simulates inventory checking in a warehouse.
+service SmartRobotService {
+  // Unary RPC for requesting a stock check
+  rpc CheckInventory(InventoryCheckRequest) returns (InventoryCheckResponse);
+
+  // Server-streaming RPC for continuous inventory monitoring
+  rpc MonitorInventory(InventoryMonitorRequest) returns (stream InventoryMonitorResponse);
+}
+
+// Request message for checking the inventory
+message InventoryCheckRequest {
+  // We can include specifics like aisle, shelf, or product ID
+  string aisle = 1;
+  string shelf = 2;
+  string product_id = 3;
+}
+
+// Response message for a stock check
+message InventoryCheckResponse {
+  // The response can include details such as item count, item conditions, etc.
+  int32 item_count = 1;
+  string condition = 2;
+  bool is_restock_needed = 3;
+}
+
+// Request message for inventory monitoring
+message InventoryMonitorRequest {
+  // Similar specifics can be included if needed
+  string area = 1;
+}
+
+// Response message for inventory monitoring
+message InventoryMonitorResponse {
+  // Details about the monitored inventory over time
+  string status = 1;
+  int32 items_scanned = 2;
+  string timestamp = 3;
+}
