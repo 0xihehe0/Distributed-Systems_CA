@@ -53,9 +53,8 @@ public class DemoServer {
     private void registerToConsul() {
         System.out.println("Registering server to Consul...");
 
-        // Load Consul configuration from consul.properties file
         Properties props = new Properties();
-        try (FileInputStream fis = new FileInputStream("src/main/resources/consul.properties")) {
+        try (FileInputStream fis = new FileInputStream("src/main/resources/robot.properties")) {
             props.load(fis);
         } catch (IOException e) {
             e.printStackTrace();
