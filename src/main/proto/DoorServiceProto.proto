@@ -1,44 +1,34 @@
 syntax = "proto3";
 
-package com.ncirl.smartbuilding.door;
+package com.ncirl.streaming;
 
 option java_multiple_files = true;
-option java_package = "com.ncirl.smartbuilding.door";
+option java_package = "com.ncirl.streaming.streamingclientservice";
 option java_outer_classname = "DoorServiceProto";
 
 // The smart door service controls the automated warehouse doors based on cargo volume.
 service SmartDoorService {
-  // Unary RPC for opening the door
-  rpc OpenDoor(DoorRequest) returns (DoorResponse);
+  // Unary RPC
+  rpc sendUnaryRequest(UnaryRequest) returns (UnaryResponse);
 
-  // Unary RPC for closing the door
-  rpc CloseDoor(DoorRequest) returns (DoorResponse);
+  // Server-side streaming RPC
+  rpc streamClientInformation(stream ClientInformation) returns (ServerResponse);
 
-  // Server-streaming RPC for monitoring the door status
-  rpc MonitorDoor(DoorMonitorRequest) returns (stream DoorStatus);
 }
 
-// Request message for opening or closing the door
-message DoorRequest {
-  string door_id = 1;
-  // Optionally include details about the cargo for intelligent control
-  float cargo_volume = 2;
+message UnaryRequest {
+  string name = 1;
 }
 
-// Response message for door operations
-message DoorResponse {
-  bool success = 1;
-  string message = 2;
+message UnaryResponse {
+  string message = 1;
 }
 
-// Request message for monitoring the door
-message DoorMonitorRequest {
-  string door_id = 1;
+message ClientInformation {
+  string clientName = 1;
+  string dateTime = 2;
 }
 
-// Response message for door status
-message DoorStatus {
-  string door_id = 1;
-  bool is_open = 2;
-  string timestamp = 3;
+message ServerResponse {
+  string message = 1;
 }

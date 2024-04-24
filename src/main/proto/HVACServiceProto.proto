@@ -1,52 +1,33 @@
 syntax = "proto3";
 
-package com.ncirl.smartbuilding.hvac;
+package com.ncirl.streaming;
 
 option java_multiple_files = true;
-option java_package = "com.ncirl.smartbuilding.hvac";
+option java_package = "com.ncirl.streaming.streamingclientservice";
 option java_outer_classname = "HVACServiceProto";
 
 // The smart HVAC (Heating, Ventilation, and Air Conditioning) service monitors and controls warehouse temperature.
 service SmartHVACService {
-  // Unary RPC for requesting the current temperature
-  rpc GetCurrentTemperature(TemperatureRequest) returns (TemperatureResponse);
+  // Unary RPC
+  rpc sendUnaryRequest(UnaryRequest) returns (UnaryResponse);
 
-  // Unary RPC to set the desired temperature
-  rpc SetTemperature(TemperatureSetRequest) returns (TemperatureSetResponse);
-
-  // Server-streaming RPC for temperature alerts
-  rpc MonitorTemperature(TemperatureMonitorRequest) returns (stream TemperatureAlert);
+  // Server-side streaming RPC
+  rpc streamClientInformation(stream ClientInformation) returns (ServerResponse);
 }
 
-// Request message for the current temperature
-message TemperatureRequest {
-  string sensor_id = 1;
+message UnaryRequest {
+  string name = 1;
 }
 
-// Response message with the current temperature
-message TemperatureResponse {
-  float current_temperature = 1;
+message UnaryResponse {
+  string message = 1;
 }
 
-// Request message to set the desired temperature
-message TemperatureSetRequest {
-  float desired_temperature = 1;
+message ClientInformation {
+  string clientName = 1;
+  string dateTime = 2;
 }
 
-// Response message for setting the desired temperature
-message TemperatureSetResponse {
-  bool success = 1;
-  string message = 2;
-}
-
-// Request message for monitoring temperature alerts
-message TemperatureMonitorRequest {
-  // No fields required for a simple monitor request, could add if needed
-}
-
-// Response message for temperature alerts
-message TemperatureAlert {
-  float current_temperature = 1;
-  bool is_alert_triggered = 2;
-  string timestamp = 3;
+message ServerResponse {
+  string message = 1;
 }
