@@ -5,6 +5,7 @@ import io.grpc.stub.StreamObserver;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+import com.ncirl.WarehouseArrayListReader;
 
 public class ConditionerServiceClient {
 
