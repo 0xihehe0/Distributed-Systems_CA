@@ -4,7 +4,9 @@
 package com.ncirl.streaming.streamingclientservice;
 
 public final class StreamingClientServiceProto {
-  private StreamingClientServiceProto() {}
+  private StreamingClientServiceProto() {
+
+  }
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }

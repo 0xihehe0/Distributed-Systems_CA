@@ -5,7 +5,6 @@ import io.grpc.stub.StreamObserver;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-import com.ncirl.WeatherArrayListReader;
 
 public class RobotServiceClient {
 
@@ -114,8 +113,8 @@ public class RobotServiceClient {
     public static void main(String[] args) throws InterruptedException {
         String host = "localhost";
         int port = 8080;
-        WeatherArrayListReader.startReading();
-        System.out.println(WeatherArrayListReader.readings);
+        SmartWarehouse.WeatherArrayListReader.startReading();
+        System.out.println(SmartWarehouse.WeatherArrayListReader.readings);
         String clientName = "Client01.ncirl.com";
 
         StreamingClientClient client = new StreamingClientClient(host, port);
