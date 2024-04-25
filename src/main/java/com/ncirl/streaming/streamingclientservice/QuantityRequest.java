@@ -4,26 +4,30 @@
 package com.ncirl.streaming.streamingclientservice;
 
 /**
- * Protobuf type {@code com.ncirl.streaming.ServerResponse}
+ * <pre>
+ * New messages for warehouse quantity request and response
+ * </pre>
+ *
+ * Protobuf type {@code com.ncirl.streaming.QuantityRequest}
  */
-public final class ServerResponse extends
+public final class QuantityRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:com.ncirl.streaming.ServerResponse)
-    ServerResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.ncirl.streaming.QuantityRequest)
+    QuantityRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ServerResponse.newBuilder() to construct.
-  private ServerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use QuantityRequest.newBuilder() to construct.
+  private QuantityRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ServerResponse() {
-    message_ = "";
+  private QuantityRequest() {
+    productId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ServerResponse();
+    return new QuantityRequest();
   }
 
   @java.lang.Override
@@ -31,7 +35,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ServerResponse(
+  private QuantityRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -52,7 +56,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            message_ = s;
+            productId_ = s;
             break;
           }
           default: {
@@ -78,49 +82,49 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.ncirl.streaming.streamingclientservice.RobotServiceProto.internal_static_com_ncirl_streaming_ServerResponse_descriptor;
+    return com.ncirl.streaming.streamingclientservice.RobotServiceProto.internal_static_com_ncirl_streaming_QuantityRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.ncirl.streaming.streamingclientservice.RobotServiceProto.internal_static_com_ncirl_streaming_ServerResponse_fieldAccessorTable
+    return com.ncirl.streaming.streamingclientservice.RobotServiceProto.internal_static_com_ncirl_streaming_QuantityRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.ncirl.streaming.streamingclientservice.ServerResponse.class, com.ncirl.streaming.streamingclientservice.ServerResponse.Builder.class);
+            com.ncirl.streaming.streamingclientservice.QuantityRequest.class, com.ncirl.streaming.streamingclientservice.QuantityRequest.Builder.class);
   }
 
-  public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+  public static final int PRODUCTID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object productId_;
   /**
-   * <code>string message = 1;</code>
-   * @return The message.
+   * <code>string productId = 1;</code>
+   * @return The productId.
    */
   @java.lang.Override
-  public java.lang.String getMessage() {
-    java.lang.Object ref = message_;
+  public java.lang.String getProductId() {
+    java.lang.Object ref = productId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      message_ = s;
+      productId_ = s;
       return s;
     }
   }
   /**
-   * <code>string message = 1;</code>
-   * @return The bytes for message.
+   * <code>string productId = 1;</code>
+   * @return The bytes for productId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getMessageBytes() {
-    java.lang.Object ref = message_;
+      getProductIdBytes() {
+    java.lang.Object ref = productId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      message_ = b;
+      productId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -141,8 +145,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productId_);
     }
     unknownFields.writeTo(output);
   }
@@ -153,8 +157,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -166,13 +170,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.ncirl.streaming.streamingclientservice.ServerResponse)) {
+    if (!(obj instanceof com.ncirl.streaming.streamingclientservice.QuantityRequest)) {
       return super.equals(obj);
     }
-    com.ncirl.streaming.streamingclientservice.ServerResponse other = (com.ncirl.streaming.streamingclientservice.ServerResponse) obj;
+    com.ncirl.streaming.streamingclientservice.QuantityRequest other = (com.ncirl.streaming.streamingclientservice.QuantityRequest) obj;
 
-    if (!getMessage()
-        .equals(other.getMessage())) return false;
+    if (!getProductId()
+        .equals(other.getProductId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,76 +188,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getMessage().hashCode();
+    hash = (37 * hash) + PRODUCTID_FIELD_NUMBER;
+    hash = (53 * hash) + getProductId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseFrom(
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseFrom(
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseFrom(
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseFrom(
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseFrom(byte[] data)
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseFrom(
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseFrom(java.io.InputStream input)
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseFrom(
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseDelimitedFrom(
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseFrom(
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse parseFrom(
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -266,7 +270,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.ncirl.streaming.streamingclientservice.ServerResponse prototype) {
+  public static Builder newBuilder(com.ncirl.streaming.streamingclientservice.QuantityRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -282,26 +286,30 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code com.ncirl.streaming.ServerResponse}
+   * <pre>
+   * New messages for warehouse quantity request and response
+   * </pre>
+   *
+   * Protobuf type {@code com.ncirl.streaming.QuantityRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.ncirl.streaming.ServerResponse)
-      com.ncirl.streaming.streamingclientservice.ServerResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.ncirl.streaming.QuantityRequest)
+      com.ncirl.streaming.streamingclientservice.QuantityRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.ncirl.streaming.streamingclientservice.RobotServiceProto.internal_static_com_ncirl_streaming_ServerResponse_descriptor;
+      return com.ncirl.streaming.streamingclientservice.RobotServiceProto.internal_static_com_ncirl_streaming_QuantityRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.ncirl.streaming.streamingclientservice.RobotServiceProto.internal_static_com_ncirl_streaming_ServerResponse_fieldAccessorTable
+      return com.ncirl.streaming.streamingclientservice.RobotServiceProto.internal_static_com_ncirl_streaming_QuantityRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.ncirl.streaming.streamingclientservice.ServerResponse.class, com.ncirl.streaming.streamingclientservice.ServerResponse.Builder.class);
+              com.ncirl.streaming.streamingclientservice.QuantityRequest.class, com.ncirl.streaming.streamingclientservice.QuantityRequest.Builder.class);
     }
 
-    // Construct using com.ncirl.streaming.streamingclientservice.ServerResponse.newBuilder()
+    // Construct using com.ncirl.streaming.streamingclientservice.QuantityRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -319,7 +327,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      message_ = "";
+      productId_ = "";
 
       return this;
     }
@@ -327,17 +335,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.ncirl.streaming.streamingclientservice.RobotServiceProto.internal_static_com_ncirl_streaming_ServerResponse_descriptor;
+      return com.ncirl.streaming.streamingclientservice.RobotServiceProto.internal_static_com_ncirl_streaming_QuantityRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.ncirl.streaming.streamingclientservice.ServerResponse getDefaultInstanceForType() {
-      return com.ncirl.streaming.streamingclientservice.ServerResponse.getDefaultInstance();
+    public com.ncirl.streaming.streamingclientservice.QuantityRequest getDefaultInstanceForType() {
+      return com.ncirl.streaming.streamingclientservice.QuantityRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.ncirl.streaming.streamingclientservice.ServerResponse build() {
-      com.ncirl.streaming.streamingclientservice.ServerResponse result = buildPartial();
+    public com.ncirl.streaming.streamingclientservice.QuantityRequest build() {
+      com.ncirl.streaming.streamingclientservice.QuantityRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -345,9 +353,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.ncirl.streaming.streamingclientservice.ServerResponse buildPartial() {
-      com.ncirl.streaming.streamingclientservice.ServerResponse result = new com.ncirl.streaming.streamingclientservice.ServerResponse(this);
-      result.message_ = message_;
+    public com.ncirl.streaming.streamingclientservice.QuantityRequest buildPartial() {
+      com.ncirl.streaming.streamingclientservice.QuantityRequest result = new com.ncirl.streaming.streamingclientservice.QuantityRequest(this);
+      result.productId_ = productId_;
       onBuilt();
       return result;
     }
@@ -386,18 +394,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.ncirl.streaming.streamingclientservice.ServerResponse) {
-        return mergeFrom((com.ncirl.streaming.streamingclientservice.ServerResponse)other);
+      if (other instanceof com.ncirl.streaming.streamingclientservice.QuantityRequest) {
+        return mergeFrom((com.ncirl.streaming.streamingclientservice.QuantityRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.ncirl.streaming.streamingclientservice.ServerResponse other) {
-      if (other == com.ncirl.streaming.streamingclientservice.ServerResponse.getDefaultInstance()) return this;
-      if (!other.getMessage().isEmpty()) {
-        message_ = other.message_;
+    public Builder mergeFrom(com.ncirl.streaming.streamingclientservice.QuantityRequest other) {
+      if (other == com.ncirl.streaming.streamingclientservice.QuantityRequest.getDefaultInstance()) return this;
+      if (!other.getProductId().isEmpty()) {
+        productId_ = other.productId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -415,11 +423,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.ncirl.streaming.streamingclientservice.ServerResponse parsedMessage = null;
+      com.ncirl.streaming.streamingclientservice.QuantityRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.ncirl.streaming.streamingclientservice.ServerResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.ncirl.streaming.streamingclientservice.QuantityRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -429,78 +437,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object message_ = "";
+    private java.lang.Object productId_ = "";
     /**
-     * <code>string message = 1;</code>
-     * @return The message.
+     * <code>string productId = 1;</code>
+     * @return The productId.
      */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
+    public java.lang.String getProductId() {
+      java.lang.Object ref = productId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        message_ = s;
+        productId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string message = 1;</code>
-     * @return The bytes for message.
+     * <code>string productId = 1;</code>
+     * @return The bytes for productId.
      */
     public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
+        getProductIdBytes() {
+      java.lang.Object ref = productId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        message_ = b;
+        productId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string message = 1;</code>
-     * @param value The message to set.
+     * <code>string productId = 1;</code>
+     * @param value The productId to set.
      * @return This builder for chaining.
      */
-    public Builder setMessage(
+    public Builder setProductId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      message_ = value;
+      productId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string message = 1;</code>
+     * <code>string productId = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMessage() {
+    public Builder clearProductId() {
       
-      message_ = getDefaultInstance().getMessage();
+      productId_ = getDefaultInstance().getProductId();
       onChanged();
       return this;
     }
     /**
-     * <code>string message = 1;</code>
-     * @param value The bytes for message to set.
+     * <code>string productId = 1;</code>
+     * @param value The bytes for productId to set.
      * @return This builder for chaining.
      */
-    public Builder setMessageBytes(
+    public Builder setProductIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      message_ = value;
+      productId_ = value;
       onChanged();
       return this;
     }
@@ -517,41 +525,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:com.ncirl.streaming.ServerResponse)
+    // @@protoc_insertion_point(builder_scope:com.ncirl.streaming.QuantityRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:com.ncirl.streaming.ServerResponse)
-  private static final com.ncirl.streaming.streamingclientservice.ServerResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.ncirl.streaming.QuantityRequest)
+  private static final com.ncirl.streaming.streamingclientservice.QuantityRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.ncirl.streaming.streamingclientservice.ServerResponse();
+    DEFAULT_INSTANCE = new com.ncirl.streaming.streamingclientservice.QuantityRequest();
   }
 
-  public static com.ncirl.streaming.streamingclientservice.ServerResponse getDefaultInstance() {
+  public static com.ncirl.streaming.streamingclientservice.QuantityRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ServerResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ServerResponse>() {
+  private static final com.google.protobuf.Parser<QuantityRequest>
+      PARSER = new com.google.protobuf.AbstractParser<QuantityRequest>() {
     @java.lang.Override
-    public ServerResponse parsePartialFrom(
+    public QuantityRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ServerResponse(input, extensionRegistry);
+      return new QuantityRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ServerResponse> parser() {
+  public static com.google.protobuf.Parser<QuantityRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ServerResponse> getParserForType() {
+  public com.google.protobuf.Parser<QuantityRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.ncirl.streaming.streamingclientservice.ServerResponse getDefaultInstanceForType() {
+  public com.ncirl.streaming.streamingclientservice.QuantityRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

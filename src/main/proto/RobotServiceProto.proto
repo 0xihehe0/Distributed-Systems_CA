@@ -8,14 +8,17 @@ option java_outer_classname = "RobotServiceProto";
 
 // The smart robot service simulates inventory checking in a warehouse.
 service StreamingClientService {
-  // Unary RPC
+  // Existing unary RPC
   rpc sendUnaryRequest(UnaryRequest) returns (UnaryResponse);
 
-  // Server-side streaming RPC
-  rpc streamClientInformation(stream ClientInformation) returns (ServerResponse);
+  // New unary RPC for requesting warehouse quantity
+  rpc getWarehouseQuantity(QuantityRequest) returns (QuantityResponse);
 
+  // Existing server-side streaming RPC
+  rpc streamClientInformation(stream ClientInformation) returns (ServerResponse);
 }
 
+// Existing messages
 message UnaryRequest {
   string name = 1;
 }
@@ -31,4 +34,13 @@ message ClientInformation {
 
 message ServerResponse {
   string message = 1;
+}
+
+// New messages for warehouse quantity request and response
+message QuantityRequest {
+  string productId = 1;
+}
+
+message QuantityResponse {
+  int32 quantity = 1;
 }

@@ -1,5 +1,7 @@
 package com.ncirl.streaming.streamingclientservice;
 
+import io.grpc.stub.StreamObserver;
+
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
@@ -155,6 +157,8 @@ public final class StreamingClientServiceGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return StreamingClientServiceGrpc.bindService(this);
     }
+
+    public abstract void getWarehouseQuantity(QuantityRequest request, StreamObserver<QuantityResponse> responseObserver);
   }
 
   /**
@@ -193,6 +197,9 @@ public final class StreamingClientServiceGrpc {
         io.grpc.stub.StreamObserver<com.ncirl.streaming.streamingclientservice.ServerResponse> responseObserver) {
       return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
           getChannel().newCall(getStreamClientInformationMethod(), getCallOptions()), responseObserver);
+    }
+
+    public void getWarehouseQuantity(QuantityRequest request, StreamObserver<QuantityResponse> streamObserver) {
     }
   }
 

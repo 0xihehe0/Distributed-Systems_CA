@@ -108,5 +108,8 @@ public class StreamingClientClient {
         // Shutdown client
         client.shutdown();
     }
+
+    public void getWarehouseQuantity(String productId) {
+    }
 }
 

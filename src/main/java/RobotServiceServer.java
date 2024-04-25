@@ -3,7 +3,7 @@ import com.ncirl.streaming.streamingclientservice.*;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
-
+import com.ncirl.WarehouseArrayListReader;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -46,6 +46,17 @@ public class RobotServiceServer {
             String message = "Received unary request from client: " + request.getName();
             UnaryResponse response = UnaryResponse.newBuilder()
                     .setMessage(message)
+                    .build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+        }
+
+        @Override
+        public void getWarehouseQuantity(QuantityRequest request, StreamObserver<QuantityResponse> responseObserver) {
+            // 从 WarehouseArrayListReader 获取数据
+            int quantity = WarehouseArrayListReader.getQuantity(request.getProductId());
+            QuantityResponse response = QuantityResponse.newBuilder()
+                    .setQuantity(quantity)
                     .build();
             responseObserver.onNext(response);
             responseObserver.onCompleted();

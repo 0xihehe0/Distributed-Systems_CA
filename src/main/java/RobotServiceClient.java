@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import com.ncirl.WeatherArrayListReader;
+import com.ncirl.Warehouse;
+import com.ncirl.WarehouseArrayListReader;
 
 public class RobotServiceClient {
 
@@ -85,6 +87,32 @@ public class RobotServiceClient {
         channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
     }
 
+
+    public void getWarehouseQuantity(String productId) {
+        QuantityRequest request = QuantityRequest.newBuilder()
+                .setProductId(productId)
+                .build();
+        // 假设我们已经定义了一个新的方法来发送请求
+        stub.getWarehouseQuantity(request, new StreamObserver<QuantityResponse>() {
+            @Override
+            public void onNext(QuantityResponse response) {
+                System.out.println("Quantity response from server: " + response.getQuantity());
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onCompleted() {
+
+            }
+
+            // ... onError 和 onCompleted 方法 ...
+        });
+    }
+
     public static void main(String[] args) throws InterruptedException {
         String host = "localhost";
         int port = 8080;
@@ -102,6 +130,8 @@ public class RobotServiceClient {
         // Wait for user input to stop streaming
         System.out.println("Press 'Q' to stop streaming client information");
         Scanner scanner = new Scanner(System.in);
+
+        client.getWarehouseQuantity("productId");
         while (true) {
             String input = scanner.nextLine();
             if (input.equalsIgnoreCase("Q")) {

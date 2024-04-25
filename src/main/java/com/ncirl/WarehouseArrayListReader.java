@@ -18,6 +18,15 @@ public class WarehouseArrayListReader {
         timer.scheduleAtFixedRate(new Task(), 0, 5000); // Schedule the task to run every 5 seconds
     }
 
+    public static int getQuantity(String productId) {
+        for (Warehouse item : inventory) {
+            if (item.getProductId().equals(productId)) {
+                return item.getQuantity();
+            }
+        }
+        return -1; // Return -1 or some error code if product not found
+    }
+
     static class Task extends TimerTask {
         private int index = 0;
 
