@@ -77,6 +77,11 @@ public class StreamingClientServer {
                 }
             };
         }
+
+        @Override
+        public void getWarehouseQuantity(QuantityRequest request, StreamObserver<QuantityResponse> responseObserver) {
+
+        }
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {

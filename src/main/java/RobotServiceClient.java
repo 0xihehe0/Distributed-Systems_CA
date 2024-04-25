@@ -6,8 +6,6 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import com.ncirl.WeatherArrayListReader;
-import com.ncirl.Warehouse;
-import com.ncirl.WarehouseArrayListReader;
 
 public class RobotServiceClient {
 
