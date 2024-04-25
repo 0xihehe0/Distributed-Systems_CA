@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import com.ncirl.WeatherArrayListReader;
 
-public class HVACSServiceClient {
+public class ConditionerServiceClient {
 
     private ManagedChannel channel;
     private StreamingClientServiceGrpc.StreamingClientServiceStub stub;
@@ -19,7 +19,7 @@ public class HVACSServiceClient {
         this.stub = StreamingClientServiceGrpc.newStub(channel);
     }
 
-    public HVACSServiceClient(ManagedChannel channel, StreamingClientServiceGrpc.StreamingClientServiceStub stub) {
+    public ConditionerServiceClient(ManagedChannel channel, StreamingClientServiceGrpc.StreamingClientServiceStub stub) {
         this.channel = channel;
         this.stub = stub;
     }

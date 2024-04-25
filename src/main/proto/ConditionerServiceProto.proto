@@ -4,10 +4,10 @@ package com.ncirl.streaming;
 
 option java_multiple_files = true;
 option java_package = "com.ncirl.streaming.streamingclientservice";
-option java_outer_classname = "HVACServiceProto";
+option java_outer_classname = "ConditionerServiceProto";
 
 // The smart HVAC (Heating, Ventilation, and Air Conditioning) service monitors and controls warehouse temperature.
-service SmartHVACService {
+service ConditionerService {
   // Unary RPC
   rpc sendUnaryRequest(UnaryRequest) returns (UnaryResponse);
 

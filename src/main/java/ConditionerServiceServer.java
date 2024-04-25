@@ -7,7 +7,7 @@ import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class HVACSServiceServer {
+public class ConditionerServiceServer {
 
     private Server server;
 
@@ -21,7 +21,7 @@ public class HVACSServiceServer {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("Shutting down gRPC server");
             try {
-                HVACSServiceServer.this.stop();
+                ConditionerServiceServer.this.stop();
             } catch (InterruptedException e) {
                 e.printStackTrace(System.err);
             }
