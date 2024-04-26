@@ -15,7 +15,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class SmartWarehouse extends Application {
-    public static com.ncirl.WeatherArrayListReader WeatherArrayListReader;
     private Label weatherLabel;
 
     @Override
