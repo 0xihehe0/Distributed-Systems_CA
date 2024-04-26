@@ -2,6 +2,7 @@
 
 import com.ncirl.Weather;
 import com.ncirl.WeatherArrayListReader;
+import com.ncirl.WeatherArrayListReader;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -22,7 +23,8 @@ public class SmartWarehouse extends Application {
         // Setup the main layout pane
         BorderPane borderPane = new BorderPane();
         // Start reading weather data
-        WeatherArrayListReader.startReading();
+        System.out.println(WeatherArrayListReader.getWeather());
+
 
         // Set up the left, center, and right panes
         borderPane.setLeft(setupLeftPane());
@@ -34,8 +36,6 @@ public class SmartWarehouse extends Application {
         primaryStage.setTitle("Smart Warehouse");
         primaryStage.setScene(scene);
         primaryStage.show();
-
-
     }
 
     private VBox setupLeftPane() {
@@ -44,7 +44,6 @@ public class SmartWarehouse extends Application {
         leftBox.setAlignment(Pos.CENTER);
 
         // Initialize the weather data label
-//        System.out.println(WeatherArrayListReader.readings);
         weatherLabel = new Label("Waiting for weather data...");
         leftBox.getChildren().add(weatherLabel);
 
