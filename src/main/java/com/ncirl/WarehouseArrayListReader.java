@@ -27,6 +27,13 @@ public class WarehouseArrayListReader {
         return -1; // Return -1 or some error code if product not found
     }
 
+    public static ArrayList<Warehouse> getWarehouseData(){
+        inventory.add(new Warehouse("001", "Screwdriver", 150));
+        inventory.add(new Warehouse("002", "Hammer", 85));
+        inventory.add(new Warehouse("003", "Wrench", 120));
+        return inventory;
+    }
+
     static class Task extends TimerTask {
         private int index = 0;
 
